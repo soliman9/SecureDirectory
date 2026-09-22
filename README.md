@@ -14,20 +14,20 @@ pip install -r requirements.txt
 
 ```bash
 # Encrypt a folder → myfolder.vault (Fernet mode, default)
-python vault.py encrypt /path/to/myfolder
+python securedirectory.py encrypt /path/to/myfolder
 
 # Encrypt with streaming AES-256-GCM instead (recommended for multi-GB folders,
 # since it never loads the whole archive into RAM at once)
-python vault.py encrypt /path/to/myfolder --stream
+python securedirectory.py encrypt /path/to/myfolder --stream
 
 # Decrypt back into a folder next to the .vault file
-python vault.py decrypt /path/to/myfolder.vault
+python securedirectory.py decrypt /path/to/myfolder.vault
 
 # Decrypt into a specific directory
-python vault.py decrypt /path/to/myfolder.vault --output /path/to/restore/here
+python vausecuredirectorylt.py decrypt /path/to/myfolder.vault --output /path/to/restore/here
 
 # Skip the confirmation prompts (useful for scripting)
-python vault.py encrypt /path/to/myfolder --force
+python vasecuredirectoryult.py encrypt /path/to/myfolder --force
 ```
 
 You'll be prompted for a password via `getpass` (nothing echoes to the
@@ -54,7 +54,7 @@ screen). There is no password recovery — if you lose it, the data is gone.
   improvement, not a cryptographic guarantee — wear-leveling and snapshots
   can leave copies elsewhere.
 
-**Phase 3 — Pipeline (`vault.py`)**
+**Phase 3 — Pipeline (`securedirectory.py`)**
 - Encrypt: prompt password → zip folder → generate salt → derive key →
   encrypt → write `[magic][mode][salt][ciphertext]` to `.vault` → confirm →
   shred zip + original folder.
