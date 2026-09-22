@@ -24,10 +24,10 @@ python securedirectory.py encrypt /path/to/myfolder --stream
 python securedirectory.py decrypt /path/to/myfolder.vault
 
 # Decrypt into a specific directory
-python vausecuredirectorylt.py decrypt /path/to/myfolder.vault --output /path/to/restore/here
+python securedirectory.py decrypt /path/to/myfolder.vault --output /path/to/restore/here
 
 # Skip the confirmation prompts (useful for scripting)
-python vasecuredirectoryult.py encrypt /path/to/myfolder --force
+python securedirectory.py encrypt /path/to/myfolder --force
 ```
 
 You'll be prompted for a password via `getpass` (nothing echoes to the
